@@ -7,16 +7,18 @@ export default class Header extends React.Component {
     
     render() {
         return (
-            <nav className='navbar navbar-expand-lg navbar-light bg-light'> 
-                    <a className='navbar-brand' href='#'>Brand</a> 
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className='navbar-nav mr-auto'>
-                            <li className='nav-item active' style={{paddingRight: "12px"}}><Link to='/'>Home</Link></li>
-                            <li className='nav-item dropdown' style={{paddingRight: "12px"}}><Link to='/contact'>Contact</Link></li>
-                            <li className='nav-item dropdown' style={{paddingRight: "12px"}}><Link to='/contacts'>Error page</Link></li>
-                        </ul>
-                    </div> 
-            </nav> 
+            <nav className='navbar navbar-default'>
+                <div className='container-fluid'>
+                    <div className='navbar-header'>
+                        <a className='navbar-brand' href='#'>Brand</a>
+                    </div>
+                    <ul className='nav navbar-nav'>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/contact'>Contact</Link></li>
+                        <li><Link to='/contacts'>Error page</Link></li>
+                    </ul>
+                </div>
+            </nav>
         );
     }
     
