@@ -10,10 +10,10 @@ import ErrorPage from './pages/error/index';
 export default (
     <Route component={ App } path={ App.path } >
         <IndexRoute component={ HomePage } />
-
+        
         { HomeRoutes }
         { ContactRoutes }
-
+        
         <Route path='*' component={ ErrorPage } />
     </Route>
 );

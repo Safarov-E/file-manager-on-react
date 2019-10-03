@@ -1,11 +1,12 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 import { DevTools } from './utils/index';
 
 
-function _applyMiddleware() {
+function _getMiddleware() {
     const middleware = [
-        
+        thunk
     ];
     
     return applyMiddleware(...middleware);
@@ -14,8 +15,8 @@ function _applyMiddleware() {
 
 export default function configureStore(initialState) {
     const store = compose(
-        _applyMiddleware(),
-        DevTools.instrument()
+        _getMiddleware(),
+        DevTools.instrument()  
     )(createStore)(rootReducer, initialState);
     
     return store;

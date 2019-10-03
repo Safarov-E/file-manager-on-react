@@ -32,9 +32,15 @@ export default class Input extends React.Component {
         });
 
         const { value } = this.props;
+
         return (
             <div className={ divClasses }>
-                <input type='text' value={ value } onChange={ this.handleChange } className='form-control'/>
+                <input
+                    type='text'
+                    value={ value }
+                    onChange={ this.handleChange }
+                    className='form-control'
+                />
                 { this.props.error ? <span className='help-block'>{ this.props.error }</span> : null }
             </div>
         );

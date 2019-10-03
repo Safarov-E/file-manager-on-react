@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 export default class ErrorPage extends React.Component {
-
-    static path = '/';
     
     render() {
         return (
