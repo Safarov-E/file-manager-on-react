@@ -6,6 +6,6 @@ import ItemDetails from './item-details';
 export default (
     <Route>
         <Route component={ ListPage } path={ ListPage.path } />
-        <Route component={ ItemDetails } path={ ListPage.path + '/:id'} />
+        <Route component={ ItemDetails } path={ ListPage.path + '/:id' } />
     </Route>
 );
