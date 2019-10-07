@@ -2,8 +2,7 @@ import { OPEN_MODAL, CLOSE_MODAL } from './actions';
 
 const initialState = {
     isOpen: false,
-    title: 'Модальное окно',
-    btnText: 'OK',
+    title: 'Модальное окно', 
     content: null
 };
 
@@ -12,8 +11,7 @@ function modalReducer(state = initialState, action) {
         case OPEN_MODAL:
             return Object.assign({}, state, {
                 isOpen: true,
-                title: action.title,
-                btnText: action.btnText,
+                title: action.title, 
                 content: action.content
             });
         case CLOSE_MODAL:
