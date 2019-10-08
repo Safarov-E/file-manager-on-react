@@ -47,7 +47,7 @@ class ListItem extends React.Component {
                     <button className='btn btn-success' onClick={ this.edit } >
                         <i className='glyphicon glyphicon-pencil' />
                     </button>
-                    <button className='btn btn-danger'  onClick={ this.remove } >
+                    <button className='btn btn-danger' onClick={ this.remove } >
                         <i className='glyphicon glyphicon-remove' />
                     </button>
                 </td>

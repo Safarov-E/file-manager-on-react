@@ -8,7 +8,7 @@ class ListPage extends React.Component {
     static path = '/list';
     static propTypes = {
         dispatch: PropTypes.func.isRequired,
-        list: PropTypes.object.isRequired,
+        list: PropTypes.object.isRequired
     };
 
     constructor(props) {

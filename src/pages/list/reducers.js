@@ -40,7 +40,7 @@ function listReducer(state = initialState, action) {
                 items: state.items
             });
         case DELETE_ITEM:
-            state.items = state.items.filter(item => item.id !== action.id);
+            state.items = state.items.filter(item => item.id !== action.id);  
             return Object.assign({}, state, {
                 items: state.items
             });

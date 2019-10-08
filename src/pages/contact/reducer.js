@@ -1,24 +1,25 @@
 import { SUBMIT_FORM } from './actions';
 
 const initialState = {
-	name: '',
-	email: ''
+    name: '',
+    email: ''
 };
 
 function contactReducer(state = initialState, action) {
-	switch (action.type) {
-		case SUBMIT_FORM:
-			return Object.assign({}, state, {
-				name: action.name,
-				email: action.email
-			});
-		default:
-			return state;
-	}
+    switch (action.type) {
+        case SUBMIT_FORM:
+            return Object.assign({}, state, {
+                name: action.name,
+                email: action.email
+            });
+        default:
+            return state;
+    }
 }
 
+
 const ContactReducer = {
-	user: contactReducer
+    user: contactReducer
 };
 
 export default ContactReducer;

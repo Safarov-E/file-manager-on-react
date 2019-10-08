@@ -5,41 +5,41 @@ import { closeModal } from '../../../components/modal/index';
 import Input from '../../../components/ui/input/index';
 
 class EditModal extends React.Component {
-    
-    static PropTypes = {
-    	dispatch: PropTypes.func.isRequired,
-    	name: PropTypes.string.isRequired,
-    	youtube: PropTypes.string.isRequired,
+
+    static propTypes = {
+        dispatch: PropTypes.func.isRequired,
+        name: PropTypes.string.isRequired,
+        youtube: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired,
-    	onSave: PropTypes.func.isRequired
+        onSave: PropTypes.func.isRequired
     };
-
+    
     constructor(props) {
-    	super(props);
-
-    	this.state = {
+        super(props);
+        
+        this.state = {
             id: this.props.id,
-    		name: this.props.name,
-    		youtube: this.props.youtube,
+            name: this.props.name,
+            youtube: this.props.youtube,
             errors: {
                 name: '',
                 youtube: ''
             }
-    	};
+        };
 
-    	bindAll(this, ['close', 'changeName', 'changeLink', 'save']);
+        bindAll(this, ['close', 'changeName', 'changeLink', 'save']);
     }
 
     close() {
-    	this.props.dispatch( closeModal() );
+        this.props.dispatch( closeModal() );
     }
 
     changeName(name) {
-    	this.setState({ name });
+        this.setState({ name });
     }
 
     changeLink(youtube) {
-    	this.setState({ youtube });
+        this.setState({ youtube });
     }
 
     save() {
@@ -49,40 +49,43 @@ class EditModal extends React.Component {
             name: '',
             youtube: ''
         };
-        if(name === '') {
+        if (name === '') {
             errors.name = errorTitle;
         }
-        if(youtube === '') {
+        if (youtube === '') {
             errors.youtube = errorTitle;
         }
-        this.setState({ errors });
-        if(errors.name || errors.youtube) {
-            return;
-        } 
 
-    	this.props.dispatch( this.props.onSave({ id, name, youtube }) );
+        this.setState({ errors });
+
+        if (errors.name || errors.youtube) {
+            return;
+        }
+
+        this.props.dispatch( this.props.onSave({ id, name, youtube }) );
         this.close();
     }
-
+    
     render() {
         return (
-        	<div>
-	            <div className='modal-body'>
-	                <p><b>ID:</b> { this.state.id }</p>
-	                <Input onChange={ this.changeName } value={ this.state.name } error={ this.state.errors.name } />
-	                <Input onChange={ this.changeLink } value={ this.state.youtube } error={ this.state.errors.youtube } />
-	            </div>
-	            <div className='modal-footer'>
-	            	<button className='btn btn-default' onClick={ this.close }>Закрыть</button>
-	            	<button className='btn btn-success' onClick={ this.save }>Сохранить</button>
-	            </div>
-	        </div>
+            <div>
+                <div className='modal-body'>
+                    <p><b>ID:</b> { this.state.id }</p>
+                    <Input onChange={ this.changeName } value={ this.state.name } error={ this.state.errors.name } />
+                    <Input onChange={ this.changeLink } value={ this.state.youtube } error={ this.state.errors.youtube } />
+                </div>
+                <div className='modal-footer'>
+                    <button className='btn btn-default' onClick={ this.close }>Закрыть</button>
+                    <button className='btn btn-success' onClick={ this.save }>Сохранить</button>
+                </div>
+            </div>
         );
     }
 }
 
 function mapStateToProps(state) {
-	return {};
+    return {};
 }
 
 export default connect(mapStateToProps)(EditModal);
+

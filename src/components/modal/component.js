@@ -33,7 +33,7 @@ class Modal extends React.Component {
                             <button type='button' className='close' onClick={ this.close }><span>&times;</span></button>
                             <h4 className='modal-title'>{ title }</h4>
                         </div>
-                            { content }
+                        { content }
                     </div>
                 </div>
             </div>
